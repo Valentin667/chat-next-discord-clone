@@ -25,7 +25,7 @@ const Home = () => {
       // save the ID of the user
       socket.userID = userID;
 
-      localStorage.clear("error")
+      localStorage.removeItem("error")
     };
 
     const onMessage = (message) => {
@@ -57,8 +57,8 @@ const Home = () => {
 
     const onConnectionError = (err) => {
       console.log("err", err );
-      localStorage.clear("username");
-      localStorage.clear("sessionID");
+      localStorage.removeItem("username");
+      localStorage.removeItem("sessionID");
       localStorage.setItem("error",200);
       push("/login");
     }
