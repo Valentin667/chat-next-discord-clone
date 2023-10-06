@@ -1,6 +1,6 @@
 import { io } from "socket.io-client";
 
-export const socket = io("http://localhost:1234", {
+export const socket = io("https://iut-chat.karljustiniano.fr:1234", {
   autoConnect: false,
 });
 
