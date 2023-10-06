@@ -1,0 +1,26 @@
+.userlist {
+    display: flex;
+    flex-direction: column;
+    background-color: #202123;
+    width: 300px;
+    height: 100vh;
+}
+
+.user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 20px;
+    width: 236px;
+    height: 44px;
+    border-radius: 6px;
+    transition: background-color ease 0.5s;
+    color: white;
+    opacity: 0;
+    transform: translateX(-100%);
+
+    &__active {
+        background-color: hsla(240, 15%, 94%, 0.2);
+    }
+}

@@ -1,0 +1,8 @@
+.message {
+    padding: 5px 0;
+
+    &__self {
+        text-align: right;
+        transform: translateX(100px);
+    }
+}

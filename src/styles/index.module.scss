@@ -1,0 +1,24 @@
+.homeContainer {
+    display: flex;
+
+    & > div:nth-child(2) {
+        display: flex;
+        flex-direction: column;
+        width: -webkit-fill-available;
+    }
+}
+
+// .homeTitle {
+//     text-align: center;
+// }
+
+.messages {
+    background-color: white;
+    height: 85vh;
+    overflow-y : scroll;
+    overflow-x: hidden;
+    padding: 20px;
+    width: 100%;
+    border: 1px solid black;
+    margin: 0 auto;
+}
