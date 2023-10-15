@@ -6,7 +6,7 @@ const Commands = () => {
 
   useEffect(() => {
     setSounds({
-      boom: new Audio("/assets/boom.mp3"),
+      golmon: new Audio("/assets/golmon.mp3"),
       chef: new Audio("/assets/chef.mp3"),
     });
   }, []);
@@ -17,6 +17,11 @@ const Commands = () => {
         case "/chef":
           sounds.chef.currentTime = 0;
           sounds.chef.play();
+          break;
+
+          case "/golmon":
+          sounds.golmon.currentTime = 0;
+          sounds.golmon.play();
           break;
 
         default:

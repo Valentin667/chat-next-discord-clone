@@ -12,7 +12,13 @@
     transform: translateX(-100%);
 
     &__active {
-        background-color: rgb(179, 179, 179);
+        color: black;
+        background-color: white;
+    }
+
+    &:hover {
+        color: black;
+        background-color: white;
     }
 
     .notification {

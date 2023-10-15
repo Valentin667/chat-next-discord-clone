@@ -81,7 +81,7 @@ const Home = () => {
       let content = ''
 
       switch(code){
-        case 200:
+        case 100:
           title = `Erreur ${code} : Spam`;
           content = `tu spam trop chacal`;
           break;

@@ -47,12 +47,10 @@ const Login = () => {
 
     return (
         <div className={style.loginContainer}>
-            <h1 className={`${getClassname()}`} >Login Page</h1>
-            <p>Enter username</p>
-            <div className={style.inputContainer}>
-                <input ref={inputRef} type="text" placeholder="username" onKeyDown={onKeyDown}/>
-                <img src="./images/enterButton.gif" alt="" />
-            </div>
+            <h1 className={`${getClassname()}`} >Welcome 👋</h1>
+            <p className={style.text}>Set a username to get started</p>
+            <input className={style.enter} ref={inputRef} type="text" placeholder="Username" onKeyDown={onKeyDown}/>
+            {/* <input type="submit" value="enter" ref={inputRef} onKeyDown={onKeyDown}/> */}
             {displayError()}
         </div>
     )
