@@ -2,6 +2,9 @@ import { useEffect, useRef } from 'react';
 import User from '../user/User';
 import style from './UserList.module.scss'
 import { gsap } from "gsap";
+import Image from 'next/image'
+import friends from '../../../public/icons/friends.svg'
+import nitro from '../../../public/icons/nitro.svg'
 
 const UserList = ({users, setUsers, selectedUser,setSelectedUser}) => {
 
@@ -27,7 +30,36 @@ const UserList = ({users, setUsers, selectedUser,setSelectedUser}) => {
       };
 
     return (
-        <div ref={listRef} className={style.userlist}>
+        <div ref={listRef} className={style.conversations}>
+            <div className={style.conversationListTop}>
+        <input type='search' placeholder='Find or start a conversation' />
+      </div>
+      
+        <div className={style.elementsContainer}>
+          <div className={style.svgContainer}>
+            <Image
+              height={25}
+              width={25}
+              src={friends}
+              className={style.svg}
+              alt='friends'
+            />
+          </div>
+          <p>Friends</p>
+        </div>
+        <div className={style.elementsContainer}>
+          <div className={style.svgContainer}>
+            <Image
+              height={25}
+              width={25}
+              src={nitro}
+              className={style.svg}
+              alt='nitro'
+            />
+          </div>
+          <p>Nitro</p>
+        </div>
+            <div className={style.dmTitle}>DIRECT MESSAGES</div>
             <div 
                 className={`${style.user} ${
                     selectedUser ? "" : style.user__active

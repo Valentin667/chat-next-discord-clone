@@ -1,11 +1,17 @@
 import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
 import style from "@/styles/login.module.scss"
+import Image from "next/image";
+import Image1 from "../../public/bgdiscordlogin.png"
+import Qrcode from "../../public/qrcode.png"
 
 const Login = () => {
-    const [error,setError] = useState({});
     const inputRef = useRef();
     const {push} = useRouter();
+
+    const handleLoginClick = () => {
+        onKeyDown({ keyCode: 13 });
+    }
 
     console.log(inputRef);
 
@@ -20,38 +26,31 @@ const Login = () => {
         }
     }
 
-    useEffect(() => {
-        console.log(typeof localStorage.getItem("error"));
-
-        if(localStorage.getItem('error') == 200) {
-            console.log("error is present");
-
-            setError('Server is down atm')
-        }
-    }, []);
-
-    const displayError = () => {
-        if ( error !== "") {
-            return <h2>error</h2>
-        }
-    }
-
-    const getClassname = () => {
-        let finalClassname = `${style.title} `;
-        if (error !== "") {
-            finalClassname += `${style.error} `;
-        }
-
-        return finalClassname;
-    }
-
     return (
-        <div className={style.loginContainer}>
-            <h1 className={`${getClassname()}`} >Welcome 👋</h1>
-            <p className={style.text}>Set a username to get started</p>
-            <input className={style.enter} ref={inputRef} type="text" placeholder="Username" onKeyDown={onKeyDown}/>
-            {/* <input type="submit" value="enter" ref={inputRef} onKeyDown={onKeyDown}/> */}
-            {displayError()}
+        <div>
+            <Image draggable="false" alt="" className={style.bg} src={Image1} />
+            <div className={style.form_group}>
+                <div className={style.form_left}>
+                    <h1>Welcome !</h1>
+                    <p>We are happy to see you !</p>
+                    <div className={style.form}>
+                        <div className={style.form_login}>
+                            <label htmlFor="username">USERNAME <span>*</span></label>
+                            <input ref={inputRef} type="username" id="username" onKeyDown={onKeyDown}/>
+                        </div>
+                        <button className={style.button} onClick={handleLoginClick}>Login</button>
+                    </div>
+                </div>
+                <div className={style.form_right}>
+                    <div className={style.qr}>
+                        <Image className={style.qrcode} draggable="false" alt="Qrcode to connect with your phone" src={Qrcode} />
+                    </div>
+                    <div className={style.text}>
+                        <h1>Login with a QR code</h1>
+                        <p><span>Scan it</span> to quickly connect <br /> with your <span>phone</span></p>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }

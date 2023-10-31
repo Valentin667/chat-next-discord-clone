@@ -2,21 +2,26 @@
     display: flex;
     flex-direction: column;
     background-color: #202123;
-    width: 300px;
+    // width: 300px;
     height: 100vh;
 }
+
+.userlist:hover {
+    background: var(--hover-light-grey-color);
+    transition: background-color ease 0.5s;
+  }
 
 .user {
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    padding: 20px;
-    width: 236px;
+    // padding: 20px;
+    // width: 236px;
     height: 44px;
     border-radius: 6px;
     transition: background-color ease 0.5s;
-    color: white;
+    background: var(--hover-light-grey-color);
     opacity: 0;
     transform: translateX(-100%);
 
@@ -24,3 +29,57 @@
         background-color: hsla(240, 15%, 94%, 0.2);
     }
 }
+
+.conversations {
+    height: 100%;
+    overflow-y: scroll;
+    position: relative;
+    background: #2f3136;
+  }
+  
+  .conversationsContainer {
+    padding: 10px;
+  }
+  
+  .conversationListTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #2022256e;
+    padding: 10px;
+    z-index: 10;
+    width: 100%;
+    background: #2f3136;
+    margin-bottom: 1rem;
+  }
+  
+  .elementsContainer {
+    display: flex;
+    align-items: center;
+    padding: 6px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  .elementsContainer:hover {
+    background: #3b3d43;
+  }
+  
+  .svgContainer {
+    margin-right: 10px;
+  }
+  
+  .svg {
+    width: 25px;
+    filter: invert(1);
+    opacity: 0.6;
+    cursor: pointer;
+  }
+  
+  .dmTitle {
+    opacity: 0.4;
+    font-weight: 800;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }

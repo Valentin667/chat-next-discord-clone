@@ -1,6 +1,11 @@
 import { socket } from "@/utils/socket";
 import { useRef } from "react";
-
+import Image from "next/image";
+import plusFilled from '../../../public/icons/plus-filled.svg'
+import sticker from '../../../public/icons/sticker.svg'
+import smiley from '../../../public/icons/smiley.svg'
+import gift from '../../../public/icons/gift.svg'
+import gif from '../../../public/icons/gif.svg'
 import style from "./input.module.scss";
 
 const Input = ({ selectedUser, setSelectedUser }) => {
@@ -38,12 +43,39 @@ const Input = ({ selectedUser, setSelectedUser }) => {
   };
 
   return (
-    <input
-      ref={inputRef}
-      className={style.input}
-      type="text"
-      onKeyDown={onKeyDown}
-    />
+    <div className={style.chatInputContainer}>
+      <div className={style.chatInputWrapper}>
+        <div className={style.svgContainer}>
+          <Image
+            height={25}
+            width={25}
+            src={plusFilled}
+            className={style.svg}
+          />
+        </div>
+      <input 
+        type="text" 
+        placeholder="Type a message"
+        ref={inputRef}
+        className={style.input}
+        onKeyDown={onKeyDown} 
+      />
+
+      <div className={style.svgContainer}>
+          <Image height={25} width={25} src={gift} className={style.svg} />
+        </div>
+        <div className={style.svgContainer}>
+          <Image height={25} width={25} src={gif} className={style.svg} />
+        </div>
+        <div className={style.svgContainer}>
+          <Image height={25} width={25} src={sticker} className={style.svg} />
+        </div>
+        <div className={style.svgContainer}>
+          <Image height={25} width={25} src={smiley} className={style.svg} />
+        </div>
+      </div>
+    </div>
+
   );
 };
 

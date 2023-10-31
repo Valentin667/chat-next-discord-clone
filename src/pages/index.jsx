@@ -8,6 +8,8 @@ import style from "@/styles/index.module.scss"
 import Notification from "@/components/notification/Notification";
 import UserList from "@/components/userList/UserList";
 import Message from "@/components/message/Message";
+import ChatHeader from "@/components/chatheader/ChatHeader";
+import Sidebar from "@/components/sidebar/Sidebar";
 
 const Home = () => {
   const [selectedUser, setSelectedUser] = useState()
@@ -189,13 +191,15 @@ const Home = () => {
     }, [selectedUser])
 
   return (
+    <div className={style.wrapper}>
+       <ChatHeader />
       <div className={style.homeContainer}>
+      <Sidebar />
           <UserList 
             users={users} 
             setUsers={setUsers}
             setSelectedUser={setSelectedUser}
             selectedUser={selectedUser}
-
           />
           <div>
           {
@@ -234,7 +238,7 @@ const Home = () => {
           </div>
           <Input selectedUser={selectedUser} setSelectedUser={setSelectedUser}/>
           </div>
-
+          </div>
           </div>
   )
 }
