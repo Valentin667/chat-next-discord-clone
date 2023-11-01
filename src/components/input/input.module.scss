@@ -8,9 +8,8 @@
     margin: 20px auto;
     
     &:focus {
-        border: 3px solid #2516c7;
-    }
-
+      outline: none;
+  }
 }
 
 .chatInputContainer {

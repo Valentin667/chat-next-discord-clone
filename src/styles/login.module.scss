@@ -20,7 +20,27 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 700px;
-    height: 400px;
+    height: 350px;
+    transition: 0.5s;
+    animation: fadeAndSlideIn 0.5s cubic-bezier(.19,.85,0,1.1), fadeOut 0.3s ease-in-out;
+
+    @keyframes fadeAndSlideIn {
+        0% {
+            transform: translateY(-60%) translateX(-50%);
+        }
+        100% {
+            transform: translateY(-50%) translateX(-50%);
+        }
+      }
+      
+      @keyframes fadeOut {
+        0% {
+          opacity: 0.5;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
 
     .form_login {
         width: 100%;
@@ -134,11 +154,33 @@
                 font-weight: 600;
             }
         }
+
+        .image_loaded {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 5px;
+          }
     
         .qrcode {
             max-width: 180px;
             max-height: 180px;
             border-radius: 5px;
+        }
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .form_group {
+        width: 400px;
+        transition: 0.5s;
+
+        .form_left {
+            width: 100%;
+        }
+
+        .form_right {
+            display: none;
         }
     }
 }
