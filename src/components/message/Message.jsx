@@ -13,7 +13,7 @@ const getAvatarUrl = (sender) => {
     }
 };
 
-const Message = ({ sender, timestamp, username, content, fromSelf }) => {
+const Message = ({ sender, timestamp, username, content, fromSelf, message }) => {
 
     const messageRef = useRef();
 
@@ -37,7 +37,6 @@ const Message = ({ sender, timestamp, username, content, fromSelf }) => {
                 // alt={sender}
                 />
             </div>
-
             <div>
                 <div className={style.messageDetails}>
                 <p className={style.sender}>{username}</p>
@@ -47,6 +46,7 @@ const Message = ({ sender, timestamp, username, content, fromSelf }) => {
                         {content}
                 </div>
             </div>
+            <p>{message}</p>
         </div>
     );
 };

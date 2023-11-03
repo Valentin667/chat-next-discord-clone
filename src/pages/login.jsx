@@ -2,9 +2,9 @@ import { useRouter } from "next/router";
 import React, { useState, useRef, useEffect} from 'react';
 import style from "@/styles/login.module.scss"
 import Image from "next/image";
-import Image1 from "../../public/bgdiscordlogin.png"
-import Qrcode from "../../public/qrcode.png"
-import loader from "../../public/loading-discord.gif"
+import bg from "../../public/assets/images/loginpage/bgdiscordlogin.png"
+import Qrcode from "../../public/assets/images/loginpage/qrcode.png"
+import loader from "../../public/assets/images/loginpage/loading_image.gif"
 import Loader from "@/components/loader/Loader";
 
 const Login = () => {
@@ -56,7 +56,7 @@ const Login = () => {
            <Loader onLoaderFinish={() => setLoading(false)} />
            ) : (
         <div>
-            <Image draggable="false" alt="" className={style.bg} src={Image1} />
+            <Image draggable="false" alt="" className={style.bg} src={bg} />
                 <div className={style.form_group}>
                     <div className={style.form_left}>
                         <h1>Welcome !</h1>

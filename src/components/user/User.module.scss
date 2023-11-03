@@ -4,21 +4,26 @@
     align-items: center;
     cursor: pointer;
     padding: 20px;
-    width: 100%;
+    width: auto;
     height: 45px;
-    transition: background-color ease 0.5s;
-    color: white;
+    color: #959ba4;
+    margin: 0 10px 5px 10px;
+    padding: 0 0 0 8px;
     opacity: 0;
     transform: translateX(-100%);
-
+    justify-content: start;
+    gap: 12px;
+    
     &__active {
-        color: black;
-        background-color: white;
+        color: white;
+        background-color: #3f4248;
+        border-radius: 5px;
     }
 
     &:hover {
-        color: black;
-        background-color: white;
+        color: #dddee1;
+        background: #3b3d43;
+        border-radius: 5px;
     }
 
     .notification {
@@ -26,5 +31,11 @@
         height: 15px;
         background-color: red;
         border-radius: 50%;
+    }
+
+    .message_avatar {
+        width: 35px;
+        height: 35px;
+        border-radius: 50px;
     }
 }

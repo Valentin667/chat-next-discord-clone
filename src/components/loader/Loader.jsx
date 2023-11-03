@@ -19,7 +19,7 @@ const Loader = ({onLoaderFinish}) => {
   return (
     <div className="loader">
       {showImage && (
-        <img className={style.image_loaded} src="/discord_loader.gif" alt="Loading" />
+        <img draggable="false" className={style.image_loaded} src="assets/images/loginpage/discord_loader.gif" alt="Loading" />
       )}
     </div>
   );

@@ -3,8 +3,8 @@ import User from '../user/User';
 import style from './UserList.module.scss'
 import { gsap } from "gsap";
 import Image from 'next/image'
-import friends from '../../../public/icons/friends.svg'
-import nitro from '../../../public/icons/nitro.svg'
+import friends from '../../../public/assets/icons/friends.svg'
+import nitro from '../../../public/assets/icons/nitro.svg'
 
 const UserList = ({users, setUsers, selectedUser,setSelectedUser}) => {
 
@@ -34,7 +34,6 @@ const UserList = ({users, setUsers, selectedUser,setSelectedUser}) => {
             <div className={style.conversationListTop}>
         <input type='search' placeholder='Find or start a conversation' />
       </div>
-      
         <div className={style.elementsContainer}>
           <div className={style.svgContainer}>
             <Image
@@ -59,7 +58,7 @@ const UserList = ({users, setUsers, selectedUser,setSelectedUser}) => {
           </div>
           <p>Nitro</p>
         </div>
-            <div className={style.dmTitle}>DIRECT MESSAGES</div>
+            <div className={style.dmtitle}>DIRECT MESSAGES</div>
             <div 
                 className={`${style.user} ${
                     selectedUser ? "" : style.user__active

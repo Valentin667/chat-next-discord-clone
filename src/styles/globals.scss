@@ -16,6 +16,22 @@
     font-family: 'Roboto',sans-serif;
   }
 
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* TRACK */
+  ::-webkit-scrollbar-track {
+    background: #2a2d31;
+  }
+  
+  /* HANDLE */
+  ::-webkit-scrollbar-thumb {
+    background: #1a1b1e;
+    border-radius: 50px;
+    height: 10%;
+  }
+
 :root {
     --deep-grey: #202225;
     --semi-deep-grey: #2f3136;
@@ -27,22 +43,6 @@
     --green: #3ba55d;
     --hover-light-grey-color: #3b3d43;
   }
-
-.wrapper {
-    height: 100vh;
-    display: flex;
-    align-items: flex-start;
-}
-
-.main {
-    height: 100%;
-    overflow-y: scroll;
-    position: relative;
-    flex: 25;
-    background: var(--light-grey);
-    display: flex;
-    width: 100vw;
-}
 
 #online,
 #offline {

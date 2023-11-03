@@ -192,16 +192,14 @@ const Home = () => {
 
   return (
     <div className={style.wrapper}>
-       <ChatHeader />
-      <div className={style.homeContainer}>
-      <Sidebar />
+          <Sidebar />
           <UserList 
             users={users} 
             setUsers={setUsers}
             setSelectedUser={setSelectedUser}
             selectedUser={selectedUser}
+            className={style.userlist}
           />
-          <div>
           {
             error && (
               <Notification
@@ -211,34 +209,35 @@ const Home = () => {
               />
             )
           }
-
-          <Commands />
-          <div ref={viewerRef} className={style.messages}>
-          {selectedUser ? selectedUser.messages.map((message, key) => {
-              return (
-                <Message
-                key={key}
-                username={message.username}
-                content={message.content}
-                fromSelf={message.from === socket.userID}
-              />
-              );
-            })
-          : messages.map((message, key) => {
-              return (
+          <div className={style.chat}>
+          <ChatHeader />
+            <Commands />
+            <div ref={viewerRef} className={style.messages}>
+            {selectedUser ? selectedUser.messages.map((message, key) => {
+                return (
                   <Message
                   key={key}
                   username={message.username}
                   content={message.content}
                   fromSelf={message.from === socket.userID}
                 />
-              );
-            })}
+                );
+              })
+            : messages.map((message, key) => {
+                return (
+                    <Message
+                    key={key}
+                    username={message.username}
+                    content={message.content}
+                    fromSelf={message.from === socket.userID}
+                  />
+                );
+              })}
 
+            </div>
+            <Input selectedUser={selectedUser} setSelectedUser={setSelectedUser}/>
           </div>
-          <Input selectedUser={selectedUser} setSelectedUser={setSelectedUser}/>
-          </div>
-          </div>
+          {/* </div> */}
           </div>
   )
 }

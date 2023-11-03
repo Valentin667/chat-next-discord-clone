@@ -1,7 +1,128 @@
 .wrapper {
-    display: flex;
-    flex-direction: column;
-    background-color: #202123;
-    // width: 300px;
-    height: 100vh;
+    width: 70px;
+    // height: 100vh;
+    background-color: #1e1f22;
+    padding: 10px 10px 5px 10px;
+
+    nav {
+      // position: fixed;
+      top: 0;
+      bottom: 0;
+      // overflow-y: scroll;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    ul {
+      display: grid;
+    }
+
+    .circles {
+      gap: 10px;
+      // position: absolute;
+      // box-sizing: border-box;
+
+      .blue_bubble {
+        color: #dbdee1;
+        &:hover {
+          background: #5865f2;
+          color: white;
+        }
+      }
+  
+      .green_bubble {
+        color: #50ab7c;
+        &:hover {
+          background: #50ab7c;
+          color: white;
+        }
+      }
+
+      .circle {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+        background-color: #323338;
+        position: relative;
+        transition: border-radius 128ms, background 128ms, color 128ms;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &::before {
+          content: '';
+          width: 25px;
+          height: 40px;
+          background-color: white;
+          position: absolute;
+          border-radius: 5px;
+          top: 50%;
+          transform: translate(-150%, -50%) scale(0);
+          transition: transform 180ms;
+        }
+  
+        &:hover {
+          border-radius: 36%;
+          
+          .popper {
+            opacity: 1;
+            transform: translateY(-50%) scale(1);
+          }
+
+          &::before {
+            transform: translate(-150%, -50%) scale(.5);
+          }
+        }
+
+        .popper {
+          background-color: black;
+          color: white;
+          z-index: 1;
+          padding: 0.68rem 1rem;
+          position: absolute;
+          top: 50%;
+          left: 155%;
+          transform-origin: left;
+          transform: translateY(-50%) scale(0.98);
+          width: max-content;
+          border-radius: 4px;
+          opacity: 0;
+          transition: opacity 64ms, transform 128ms cubic-bezier(0.43, 0.09, 0.38, 2.56);
+          pointer-events: none;
+          color: white;
+
+          h4 {
+            font-weight: 500;
+          }
+
+          ::before {
+            content: '';
+            position: absolute;
+            left: -2px;
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+            width: 24px;
+            height: 24px;
+            background-color: black;
+            z-index: -1;
+          }
+        }
+      }
+      .server_icon {
+        width: inherit;
+        border-radius: inherit;
+      }
+    }
+
+    .divider {
+      width: 100%;
+      height: 2px;
+      border-radius: 1px;
+      // opacity: .06;
+      background-color: #36363c;
+      transform: scale(.65)
+    }
   }

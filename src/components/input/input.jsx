@@ -1,11 +1,11 @@
 import { socket } from "@/utils/socket";
 import { useRef } from "react";
 import Image from "next/image";
-import plusFilled from '../../../public/icons/plus-filled.svg'
-import sticker from '../../../public/icons/sticker.svg'
-import smiley from '../../../public/icons/smiley.svg'
-import gift from '../../../public/icons/gift.svg'
-import gif from '../../../public/icons/gif.svg'
+import plusFilled from '../../../public/assets/icons/plus-filled.svg' 
+import sticker from '../../../public/assets/icons/sticker.svg'
+import smiley from '../../../public/assets/icons/smiley.svg'
+import gift from '../../../public/assets/icons/gift.svg'
+import gif from '../../../public/assets/icons/gif.svg'
 import style from "./input.module.scss";
 
 const Input = ({ selectedUser, setSelectedUser }) => {
@@ -43,7 +43,7 @@ const Input = ({ selectedUser, setSelectedUser }) => {
   };
 
   return (
-    <div className={style.chatInputContainer}>
+    // <div className={style.chatInputContainer}>
       <div className={style.chatInputWrapper}>
         <div className={style.svgContainer}>
           <Image
@@ -74,8 +74,7 @@ const Input = ({ selectedUser, setSelectedUser }) => {
           <Image height={25} width={25} src={smiley} className={style.svg} />
         </div>
       </div>
-    </div>
-
+    // </div>
   );
 };
 

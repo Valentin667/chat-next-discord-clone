@@ -1,41 +1,78 @@
 .userlist {
-    display: flex;
-    flex-direction: column;
     background-color: #202123;
-    // width: 300px;
+    position: relative;
+    width: 150px;
     height: 100vh;
 }
 
-.userlist:hover {
-    background: var(--hover-light-grey-color);
-    transition: background-color ease 0.5s;
-  }
-
 .user {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    // padding: 20px;
-    // width: 236px;
-    height: 44px;
-    border-radius: 6px;
-    transition: background-color ease 0.5s;
-    background: var(--hover-light-grey-color);
-    opacity: 0;
-    transform: translateX(-100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 20px;
+  margin: 0 10px 5px 10px;
+  width: auto;
+  height: 45px;
+  color: #959ba4;
+  opacity: 0;
+  transform: translateX(-100%);
 
     &__active {
-        background-color: hsla(240, 15%, 94%, 0.2);
+      color: #dddee1;
+      background: #3b3d43;
+      border-radius: 5px;
     }
+
+    &:hover {
+      color: #dddee1;
+      background: #3b3d43;
+      border-radius: 5px;
+  }
 }
 
 .conversations {
-    height: 100%;
+    width: 100%;
+    max-width: 260px;
+    height: 100vh;
     overflow-y: scroll;
-    position: relative;
     background: #2f3136;
+
+    ::placeholder {
+      color: #959ba4;
+    }
+
+    .elementsContainer {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      margin: 0 10px 5px 10px;
+      cursor: pointer;
+  
+      &:hover {
+        background: #3b3d43;
+        border-radius: 5px;
+        color: #dbdee1;
+      }
+
+    p {
+      color: #959ba4;
+    }
   }
+
+  .dmtitle {
+    font-weight: 500;
+    opacity: 0.4;
+    font-size: 0.8em;
+    margin-top: 20px;
+    color: #959ba4;
+    padding: 0 0 10px 18px;
+
+    &:hover {
+      color: #dbdee1;
+    }
+  }
+}
   
   .conversationsContainer {
     padding: 10px;
@@ -45,29 +82,18 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #2022256e;
+    border-bottom: 1px solid #27282b;
     padding: 10px;
     z-index: 10;
     width: 100%;
     background: #2f3136;
-    margin-bottom: 1rem;
-  }
-  
-  .elementsContainer {
-    display: flex;
-    align-items: center;
-    padding: 6px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 10px;
-  }
-  
-  .elementsContainer:hover {
-    background: #3b3d43;
+    margin-bottom: 8px;
   }
   
   .svgContainer {
     margin-right: 10px;
+    display: flex;
+    align-items: center;
   }
   
   .svg {
@@ -75,11 +101,4 @@
     filter: invert(1);
     opacity: 0.6;
     cursor: pointer;
-  }
-  
-  .dmTitle {
-    opacity: 0.4;
-    font-weight: 800;
-    margin-top: 20px;
-    margin-bottom: 20px;
   }

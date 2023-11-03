@@ -1,3 +1,5 @@
+
+
 .message {
     padding: 5px 0;
 
@@ -8,8 +10,13 @@
 }
 
 .messageCard {
-    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 4px 0 2px 20px;
     display: flex;
+
+    &:hover {
+      background-color: #2f3035;
+    }
   }
 
   .messageAvatarContainer {
@@ -28,8 +35,9 @@
   }
 
   .sender {
-    font-weight: 600;
+    color: white;
     margin-right: 10px;
+    margin-bottom: 3px;
   }
   
   .timestamp {
@@ -38,5 +46,6 @@
   
   .messageText {
     color: #c1c1c1;
+    // font-weight: 100;
     max-width: 800px;
   }

@@ -1,11 +1,11 @@
 .chatHeader {
     width: 100%;
-    background: var(--light-grey);
+    background-color: #323338;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px;
-    border-bottom: 1px solid #2022256e;
+    border-bottom: 1px solid #27282b;
     z-index: 10;
   }
   
@@ -44,6 +44,8 @@
   
   .headerItem {
     margin-right: 10px;
+    display: flex;
+    align-items: center;
   }
   
   .connectWallet {
