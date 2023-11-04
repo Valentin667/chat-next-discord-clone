@@ -1,14 +1,16 @@
 .wrapper {
     width: 70px;
-    // height: 100vh;
+    height: 100vh;
     background-color: #1e1f22;
     padding: 10px 10px 5px 10px;
 
     nav {
       // position: fixed;
-      top: 0;
-      bottom: 0;
+      // top: 0;
+      // bottom: 0;
       // overflow-y: scroll;
+      // width: 100%;
+      // z-index: 1;
 
       &::-webkit-scrollbar {
         display: none;
@@ -20,9 +22,12 @@
     }
 
     .circles {
+      // display: flex;
+      // flex-direction: column;
       gap: 10px;
+      // min-height: 100vh;
       // position: absolute;
-      // box-sizing: border-box;
+      box-sizing: border-box;
 
       .blue_bubble {
         color: #dbdee1;
@@ -88,11 +93,17 @@
           transform-origin: left;
           transform: translateY(-50%) scale(0.98);
           width: max-content;
+          max-width: 226px;
           border-radius: 4px;
           opacity: 0;
           transition: opacity 64ms, transform 128ms cubic-bezier(0.43, 0.09, 0.38, 2.56);
           pointer-events: none;
           color: white;
+
+          .popper_text {
+            max-width: 226px;
+            width: max-content;
+          }
 
           h4 {
             font-weight: 500;

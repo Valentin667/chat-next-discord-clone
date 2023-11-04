@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import React, { useState, useRef, useEffect} from 'react';
 import style from "@/styles/login.module.scss"
 import Image from "next/image";
-import bg from "../../public/assets/images/loginpage/bgdiscordlogin.png"
+import bg from "../../public/assets/images/loginpage/bgdiscordlogin.svg"
 import Qrcode from "../../public/assets/images/loginpage/qrcode.png"
 import loader from "../../public/assets/images/loginpage/loading_image.gif"
 import Loader from "@/components/loader/Loader";
