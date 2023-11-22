@@ -17,7 +17,8 @@ const ChatHeader = () => {
     <div className={style.chatHeader}>
       <div className={style.roomNameContainer}>
         <Image height={20} width={20} src={at} className={style.svg} alt='' />
-        <h3 className={style.title}>roomname</h3>
+        {/* <h3 className={style.title}>roomname</h3> */}
+        <p className={style.title}>General</p>
         <div className={style.chatHeaderStatus} id='online' />
       </div>
       {/* {currentAccount ? (

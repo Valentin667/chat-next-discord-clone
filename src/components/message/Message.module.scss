@@ -13,6 +13,7 @@
     margin-top: 20px;
     padding: 4px 0 2px 20px;
     display: flex;
+    height: auto;
 
     &:hover {
       background-color: #2f3035;
@@ -47,5 +48,14 @@
   .messageText {
     color: #c1c1c1;
     // font-weight: 100;
-    max-width: 800px;
+    display: flex;
+    justify-content: flex-start;
+    max-width: 300px;
+    word-wrap: break-word;
+  }
+
+  .message__self {
+    color: #c1c1c1;
+    // font-weight: 100;
+    max-width: 300px;
   }

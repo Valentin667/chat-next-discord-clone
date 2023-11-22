@@ -97,6 +97,160 @@
       color: #dbdee1;
     }
   }
+
+  .panel {
+    position: fixed;
+    background-color: #202123;
+    padding: 5px;
+    transform: scale(2);
+    display: flex;
+    width: fit-content;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: 0.4rem;
+    bottom: 0;
+    left: 5rem;
+
+    &:hover .status_emoji {
+      transform: translateY(-128%);
+    }
+    &:hover .tag {
+      transform: translateY(-128%);
+    }
+  }
+
+  .user_info {
+    display: flex;
+    align-items: center;
+  }
+
+  .username {
+    font-size: 0.4rem;
+    cursor: pointer;
+
+    &::before {
+      content: attr(data-tip);
+    }
+  }
+
+  .roller {
+    font-size: 0.6rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .tag, .status_emoji {
+    transition: transform 320ms;
+  }
+
+  .tag {
+    position: absolute;
+    font-size: 0.3rem;
+  }
+
+  .avatar_wrapper {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+    position: relative;
+  }
+
+  .img_avatar {
+    width: auto;
+    border-radius: inherit;
+  }
+
+  .status_holder {
+    padding: 2px;
+    background-color: #202123;
+    position: absolute;
+    border-radius: 50%;
+    bottom: -1px;
+    right: -1px;
+  }
+
+  .status_icon {
+    width: 8px;
+    height: 8px;
+    background-color: #50ab7c;
+    border-radius: 50%;
+  }
+
+  .buttons_container {
+    display: flex;
+  }
+
+  .switcher {
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 12px;
+    height: 12px;
+    border-radius: 4px;
+    background: transparent;
+    color:#959ba4;
+    cursor: pointer;
+    outline: none;
+
+    :hover {
+      background-color: #2f3136;
+    }
+  }
+
+  .tipper_boi {
+    position: relative;
+  }
+
+  .tipper_boi::after,
+  .tipper_boi::before {
+    opacity: 0;
+    pointer-events: none;
+    transition: 
+      opacity 64ms,
+      transform 128ms cubic-bezier(0.43, 0.09, 0.38, 2.56);
+  }
+
+  .tipper_boi:hover::after,
+  .tipper_boi:hover::before {
+    opacity: 1;
+  }
+
+  .tipper_boi::before {
+    content: attr(data-tip);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -132%) scale(0.98);
+    width: max-content;
+    font-size: 0.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #000000;
+    padding: 8px 12px;
+    border-radius: 4px;
+  }
+  .tipper_boi:hover::before {
+    transform: translate(-50%, -132%) scale(1);
+  }
+
+  .tipper_boi::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background: #000000;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -172%) rotate(45deg) scale(0.98);
+    z-index: -1;
+  }
+
+  .tipper_boi:hover::after {
+    transform: translate(-50%, -172%) rotate(45deg) scale(1);
+  }
 }
   
   .conversationsContainer {

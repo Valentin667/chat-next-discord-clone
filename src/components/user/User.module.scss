@@ -29,8 +29,14 @@
     .notification {
         width: 15px;
         height: 15px;
-        background-color: red;
+        background-color: #f23f42;
         border-radius: 50%;
+        color: white;
+        font-size: 0.7em;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .message_avatar {

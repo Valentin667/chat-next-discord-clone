@@ -1,14 +1,22 @@
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import style from "./User.module.scss"
 import Image from "next/image";
-import avatar from "../../../public/avatar-1.webp";
+import avatar from "../../../public/discord1.jpeg";
 
 const User = ({ user, selectedUser, setSelectedUser, resetNotification}) => {
     const userRef = useRef();
+    const [notificationCount, setNotificationCount] = useState(0);
 
     useEffect(() => {
         console.log(userRef);
     })
+
+    useEffect(() => {
+        // Increment the notification count when user.hasNewMessages is true
+        if (user.hasNewMessages) {
+          setNotificationCount(notificationCount + 1);
+        }
+      }, [user.hasNewMessages]);
 
     return (
             <div 
@@ -18,8 +26,9 @@ const User = ({ user, selectedUser, setSelectedUser, resetNotification}) => {
         }`}
             onClick={ () => 
                 { 
-                    setSelectedUser(user)
-                    resetNotification(user)
+                    setSelectedUser(user);
+                    resetNotification(user);
+                    setNotificationCount(0);
                 }
             }
         >
@@ -33,8 +42,7 @@ const User = ({ user, selectedUser, setSelectedUser, resetNotification}) => {
             {user.username}
 
             {user.hasNewMessages === true ? (
-                <span className={style.notification}>
-                </span>
+                <span className={style.notification}>{notificationCount}</span>
             ) : null }
         </div>
     )

@@ -5,11 +5,11 @@ import Image from "next/image";
 
 const getAvatarUrl = (sender) => {
     if (sender === "expediteur1") {
-        return "/avatar-1.webp";
+        return "/discord1.jpeg";
     } else if (sender === "expediteur2") {
-        return "/avatar-2.png";
+        return "/discord2.jpeg";
     } else {
-        return "/avatar-3.webp";
+        return "/discord4.jpeg";
     }
 };
 
