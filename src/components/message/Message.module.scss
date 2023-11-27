@@ -1,61 +1,139 @@
-
-
 .message {
-    padding: 5px 0;
+  padding: 5px 0;
 
-    &__self {
-        text-align: right;
-        transform: translateX(100px);
-    }
+  &__self {
+    text-align: right;
+    transform: translateX(100px);
+  }
 }
 
 .messageCard {
-    margin-top: 20px;
-    padding: 4px 0 2px 20px;
-    display: flex;
-    height: auto;
+  margin: 9px 4px 9px 0;
+  padding: 4px 0 2px 20px;
+  display: flex;
+  height: auto;
+  position: relative;
+
+  &:hover {
+    background-color: #2f3035;
+  }
+}
+
+.imageContainer {
+  content: ""; /* Utilisez une image à la place du texte */
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  top: -13px;
+  right: 8px; /* Ajustez la position horizontale de la boîte à droite */
+  width: auto; /* Ajustez la largeur de l'image */
+  height: fit-content; /* Ajustez la hauteur de l'image */
+  margin-right: 10px;
+  border: 1px solid #27282b; /* Bordure de la boîte */
+  background-color: #313237;
+  border-radius: 4px; /* Coins arrondis de la boîte */
+  z-index: 1; /* Assurez-vous que la boîte est au-dessus du contenu */
+  opacity: 0.6;
+  cursor: pointer;
+
+  &:hover {
+    -webkit-box-shadow: 0px 9px 20px -9px rgba(0, 0, 0, 0.9);
+    box-shadow: 0px 9px 20px -9px rgba(0, 0, 0, 0.9);
+  }
+
+  .arrow {
+    transform: scaleX(-1); // Rotate the arrow image
+    border-radius: 0;
+    filter: invert(1);
+    opacity: 0.8;
 
     &:hover {
-      background-color: #2f3035;
+      opacity: 1;
+      background-color: rgb(189, 188, 188);
     }
   }
 
-  .messageAvatarContainer {
-    margin-right: 20px;
-  }
-  
-  .messageAvatar {
-    border-radius: 100px;
-    width: 40px;
-    height: 40px;
+  .ellipsis {
+    border-radius: 0 5px 5px 0;
+    filter: invert(1);
+    opacity: 0.8;
+
+    &:hover {
+      opacity: 1;
+      background-color: rgb(189, 188, 188);
+    }
   }
 
-  .messageDetails {
-    display: flex;
-    align-items: center;
-  }
+  .smiley {
+    border-radius: 5px 0 0 5px;
+    filter: invert(1);
+    opacity: 0.8;
 
-  .sender {
-    color: white;
-    margin-right: 10px;
-    margin-bottom: 3px;
+    &:hover {
+      opacity: 1;
+      background-color: rgb(189, 188, 188);
+    }
   }
-  
-  .timestamp {
-    opacity: 0.4;
-  }
-  
-  .messageText {
-    color: #c1c1c1;
-    // font-weight: 100;
-    display: flex;
-    justify-content: flex-start;
-    max-width: 300px;
-    word-wrap: break-word;
-  }
+}
 
-  .message__self {
-    color: #c1c1c1;
-    // font-weight: 100;
-    max-width: 300px;
+.hiddenImage {
+  padding: 5px;
+
+  &:hover {
+    opacity: 1;
   }
+}
+
+.messageAvatarContainer {
+  margin-right: 20px;
+}
+
+.messageAvatar {
+  border-radius: 100px;
+  width: 40px;
+  height: 40px;
+}
+
+.messageDetails {
+  display: flex;
+  align-items: center;
+}
+
+.sender {
+  color: white;
+  margin-right: 10px;
+  margin-bottom: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 500px;
+}
+
+.timestamp {
+  opacity: 0.4;
+}
+
+.date {
+  color: #959ba4;
+  font-size: 0.7em;
+  letter-spacing: 0.3px;
+}
+
+.messageText {
+  color: #c1c1c1;
+  max-width: max-content;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  margin-right: 40px;
+  line-height: 23px;
+  text-align: left;
+}
+
+.message__self {
+  color: #c1c1c1;
+  // font-weight: 100;
+  // max-width: 300px;
+}

@@ -1,63 +1,129 @@
 .input {
-    all: unset;
-    // background-color: white;
-    border: 2px solid black;
-    border-radius: 10px;
-    padding: 5px 15px 5px 15px;
-    width: 80%;
-    margin: 20px 20px 20px 0;
-    
-    &:focus {
-      outline: none;
+  all: unset;
+  // background-color: white;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 5px 15px 5px 15px;
+  width: 80%;
+  margin: 20px 20px 20px 0;
+
+  &:focus {
+    outline: none;
   }
 }
 
 .chatInputContainer {
-    bottom: 0px;
-    width: 100%;
-    padding: 20px 0;
-  }
-  
-  .chatInputWrapper {
-    width: auto;
-    margin: 20px 15px 20px 15px;
-    height: 5%;
-    background: #40444b;
-    padding: 0 15px;
-    border-radius: 9px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  bottom: 0px;
+  width: 100%;
+  padding: 20px 0;
+}
 
-    input {
-        color: 0.2em;
-        outline: none;
-        background-color: transparent;
-        border: none;
-        color: white;
-    }
-  }
-  
-  .chatInput {
-    width: 100%;
-    background: transparent;
-    border: none;
-    padding: 10px;
-    color: #373a40;
+.chatInputWrapper {
+  width: auto;
+  margin: 0 15px 20px 15px;
+  height: 6%;
+  background: #373a3f;
+  padding: 0 15px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  input {
+    color: 0.2em;
     outline: none;
-    resize: none;
-    height: 90%;
+    background-color: transparent;
+    border: none;
+    color: white;
   }
+}
+
+.tipper_boi {
+  position: relative;
+}
+
+.tipper_boi::after,
+.tipper_boi::before {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 64ms, transform 128ms cubic-bezier(0.43, 0.09, 0.38, 2.56);
+}
+
+.tipper_boi:hover::after,
+.tipper_boi:hover::before {
+  opacity: 1;
+}
+
+.tipper_boi::before {
+  content: attr(data-tip);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -132%) scale(0.98);
+  width: 170px;
+  font-size: 0.9rem;
+  color: #ffffff;
+  background-color: #000000;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+.tipper_boi:hover::before {
+  transform: translate(-50%, -132%) scale(1);
+}
+
+.tipper_boi::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: #000000;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -172%) rotate(45deg) scale(0.98);
+  z-index: -1;
+}
+
+.tipper_boi:hover::after {
+  transform: translate(-50%, -172%) rotate(45deg) scale(1);
+}
+
+.chatInput {
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 10px;
+  color: #373a40;
+  outline: none;
+  resize: none;
+  height: 90%;
+}
 
 .svgContainer {
-    margin-right: 15px;
-    display: flex;
-    align-items: center;
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.svg {
+  width: 25px;
+  filter: invert(1);
+  opacity: 0.6;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
   }
-  
-  .svg {
-    width: 25px;
-    filter: invert(1);
-    opacity: 0.6;
-    cursor: pointer;
+}
+
+.emoji {
+  width: 25px;
+  cursor: pointer;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+  transition: opacity 64ms, transform 128ms cubic-bezier(0.43, 0.09, 0.38, 2.56);
+
+  &:hover {
+    filter: none;
+    transform: scale(1.1);
   }
+}

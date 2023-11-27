@@ -1,78 +1,132 @@
 .chatHeader {
-    width: 100%;
-    background-color: #323338;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    border-bottom: 1px solid #27282b;
-    z-index: 10;
-  }
-  
-  .roomNameContainer {
-    display: flex;
-    align-items: center;
-    border-width: 2px;
-    border-color: var(--light-grey);
-    flex: 1;
+  width: 100%;
+  background-color: #323338;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #27282b;
+  z-index: 10;
+}
 
-    p {
-      color: #ffffff;
-    }
+.roomNameContainer {
+  display: flex;
+  align-items: center;
+  border-width: 2px;
+  border-color: var(--light-grey);
+  flex: 1;
+
+  p {
+    color: #ffffff;
   }
-  
-  .svg {
-    width: 25px;
-    filter: invert(1);
-    opacity: 0.6;
-    cursor: pointer;
-    margin-right: 10px;
+}
+
+.svg {
+  width: 25px;
+  filter: invert(1);
+  opacity: 0.6;
+  cursor: pointer;
+  margin-right: 10px;
+
+  &:hover {
+    opacity: 0.8;
   }
-  
-  // .title {
-  //   margin-right: 10px;
-  //   margin-left: 10px;
-  // }
-  
-  .chatHeaderStatus {
-    width: 16px;
-    height: 16px;
-    border-radius: 41px;
-    left: 80px;
-  }
-  
-  .headerIconsContainer {
-    display: flex;
-    align-items: center;
-  }
-  
-  .headerItem {
-    margin-right: 10px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .connectWallet {
-    margin-right: 10px;
-    background-color: #5a65f1;
-    padding: 8px;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .connectWallet:hover {
-    background-color: #4149a9;
-  }
-  
-  .connectedWallet {
-    margin-right: 10px;
-    background-color: #2e3136;
-    padding: 8px;
-    border-radius: 55px;
-    border: 1px solid #101113;
-    display: flex;
-    align-items: center;
-  }
-  .separator {
-    margin: 0 10px;
-  }
+}
+
+.tipper_boi {
+  position: relative;
+}
+
+.tipper_boi::after,
+.tipper_boi::before {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 64ms, transform 128ms cubic-bezier(0.43, 0.09, 0.38, 2.56);
+}
+
+.tipper_boi:hover::after,
+.tipper_boi:hover::before {
+  opacity: 1;
+}
+
+.tipper_boi::before {
+  content: attr(data-tip);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(50%, 132%) scale(0.98);
+  width: max-content;
+  font-size: 0.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #000000;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+.tipper_boi:hover::before {
+  transform: translate(50%, 132%) scale(1);
+}
+
+.tipper_boi::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: #000000;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(50%, 172%) rotate(45deg) scale(0.98);
+  z-index: -1;
+}
+
+.tipper_boi:hover::after {
+  transform: translate(50%, 172%) rotate(45deg) scale(1);
+}
+
+// .title {
+//   margin-right: 10px;
+//   margin-left: 10px;
+// }
+
+.chatHeaderStatus {
+  width: 16px;
+  height: 16px;
+  border-radius: 41px;
+  left: 80px;
+}
+
+.headerIconsContainer {
+  display: flex;
+  align-items: center;
+}
+
+.headerItem {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.connectWallet {
+  margin-right: 10px;
+  background-color: #5a65f1;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.connectWallet:hover {
+  background-color: #4149a9;
+}
+
+.connectedWallet {
+  margin-right: 10px;
+  background-color: #2e3136;
+  padding: 8px;
+  border-radius: 55px;
+  border: 1px solid #101113;
+  display: flex;
+  align-items: center;
+}
+.separator {
+  margin: 0 10px;
+}
