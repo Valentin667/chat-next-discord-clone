@@ -5,10 +5,17 @@ import { gsap } from "gsap";
 import Image from "next/image";
 import friends from "../../../public/assets/icons/friends.svg";
 import nitro from "../../../public/assets/icons/nitro.svg";
-import avatar from "../../../public/discord1.jpeg";
+import avatar from "../../../public/discord4.jpeg";
 
-const UserList = ({ users, setUsers, selectedUser, setSelectedUser }) => {
+const UserList = ({
+  currentUser,
+  users,
+  setUsers,
+  selectedUser,
+  setSelectedUser,
+}) => {
   const listRef = useRef();
+  const userRef = useRef();
 
   useEffect(() => {
     gsap.to(listRef.current.children, {
@@ -83,8 +90,8 @@ const UserList = ({ users, setUsers, selectedUser, setSelectedUser }) => {
           <div className={style.avatar_wrapper}>
             <Image
               draggable="false"
-              height={18}
-              width={18}
+              height={30}
+              width={30}
               src={avatar}
               className={style.img_avatar}
               alt=""
@@ -98,7 +105,7 @@ const UserList = ({ users, setUsers, selectedUser, setSelectedUser }) => {
               className={`${style.username} ${style.tipper_boi}`}
               data-tip="Click to copy username"
             >
-              Stains
+              {users.find((user) => user.connected === true)?.username}
             </h1>
             <div className={style.roller}>
               <p className={style.status_emoji}>👨‍💻</p>

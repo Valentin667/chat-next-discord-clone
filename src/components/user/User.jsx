@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import style from "./User.module.scss";
 import Image from "next/image";
-import avatar from "../../../public/discord1.jpeg";
+import avatar from "../../../public/discord4.jpeg";
 
 const User = ({ user, selectedUser, setSelectedUser, resetNotification }) => {
   const userRef = useRef();

@@ -112,18 +112,18 @@
   }
 
   .panel {
-    position: fixed;
     background-color: #232428;
     padding: 5px;
-    transform: scale(2);
     display: flex;
-    width: fit-content;
-    justify-content: space-between;
+    width: 100%;
+    max-width: 260px;
+    height: 55px;
+    position: absolute;
+    bottom: 0;
+    left: 70px;
     align-items: center;
     color: white;
     font-size: 0.4rem;
-    bottom: 0;
-    left: 5rem;
 
     &:hover .status_emoji {
       transform: translateY(-128%);
@@ -136,10 +136,15 @@
   .user_info {
     display: flex;
     align-items: center;
+    width: 55%;
+
+    &:hover {
+      background-color: #3f4248;
+      border-radius: 5px;
+    }
   }
 
   .username {
-    font-size: 0.4rem;
     cursor: pointer;
 
     &::before {
@@ -148,14 +153,23 @@
   }
 
   .roller {
-    font-size: 0.6rem;
+    font-size: 1.8em;
     position: relative;
     overflow: hidden;
+    width: 100px;
+
+    p {
+      font-size: 1em;
+    }
   }
 
   .tag,
   .status_emoji {
     transition: transform 320ms;
+
+    h1 {
+      font-size: 1em;
+    }
   }
 
   .tag {
@@ -164,11 +178,13 @@
   }
 
   .avatar_wrapper {
-    width: 12px;
-    height: 12px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     margin-right: 8px;
-    position: relative;
+    // position: relative;
+    display: flex;
+    align-items: center;
   }
 
   .img_avatar {
@@ -194,6 +210,10 @@
 
   .buttons_container {
     display: flex;
+    width: auto;
+    justify-content: space-evenly;
+    width: 45%;
+    margin: 5px;
   }
 
   .switcher {
@@ -201,17 +221,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 12px;
-    height: 12px;
+    width: 20px;
+    height: 20px;
     border-radius: 4px;
     background: transparent;
     color: #959ba4;
     cursor: pointer;
     outline: none;
-
-    :hover {
-      background-color: #2f3136;
-    }
+    margin: 5px;
   }
 
   .tipper_boi {
@@ -236,9 +253,9 @@
     position: absolute;
     top: 0;
     left: 50%;
-    transform: translate(-50%, -132%) scale(0.98);
+    transform: translate(-50%, -138%) scale(0.98);
     width: max-content;
-    font-size: 0.5rem;
+    font-size: 1em;
     font-weight: bold;
     color: #ffffff;
     background-color: #000000;
@@ -246,7 +263,7 @@
     border-radius: 4px;
   }
   .tipper_boi:hover::before {
-    transform: translate(-50%, -132%) scale(1);
+    transform: translate(-50%, -138%) scale(1);
   }
 
   .tipper_boi::after {
@@ -257,12 +274,12 @@
     position: absolute;
     top: 0;
     left: 50%;
-    transform: translate(-50%, -172%) rotate(45deg) scale(0.98);
+    transform: translate(-50%, -180%) rotate(45deg) scale(0.98);
     z-index: -1;
   }
 
   .tipper_boi:hover::after {
-    transform: translate(-50%, -172%) rotate(45deg) scale(1);
+    transform: translate(-50%, -180%) rotate(45deg) scale(1);
   }
 }
 
@@ -293,4 +310,8 @@
   filter: invert(1);
   opacity: 0.6;
   cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
 }

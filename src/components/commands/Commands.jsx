@@ -6,22 +6,18 @@ const Commands = () => {
 
   useEffect(() => {
     setSounds({
-      golmon: new Audio("/assets/golmon.mp3"),
-      chef: new Audio("/assets/chef.mp3"),
+      discord_notification_sound_effect: new Audio(
+        "/assets/sounds/discord_notification_sound_effect.mp3"
+      ),
     });
   }, []);
 
   useEffect(() => {
     const onCommand = (command) => {
       switch (command) {
-        case "/chef":
-          sounds.chef.currentTime = 0;
-          sounds.chef.play();
-          break;
-
-          case "/golmon":
-          sounds.golmon.currentTime = 0;
-          sounds.golmon.play();
+        case "/discordjoin":
+          sounds.discord_notification_sound_effect.currentTime = 0;
+          sounds.discord_notification_sound_effect.play();
           break;
 
         default:
