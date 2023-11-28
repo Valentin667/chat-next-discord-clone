@@ -57,14 +57,6 @@ const Home = () => {
     setUsers(filteredArray);
   };
 
-  const onConnectionError = (err) => {
-    console.log("err", err);
-    localStorage.removeItem("username");
-    localStorage.removeItem("sessionID");
-    localStorage.setItem("error", 200);
-    push("/login");
-  };
-
   const getUserAtInit = (_users) => {
     console.log(_users);
     setUsers(_users);
@@ -164,8 +156,6 @@ const Home = () => {
     socket.on("message", onMessage);
     socket.on("messages", getMessagesAtInit);
     socket.on("users", getUserAtInit);
-    socket.on("disconnect", onConnectionError);
-    socket.on("connect_error", onConnectionError);
 
     return () => {
       socket.disconnect();
@@ -174,8 +164,6 @@ const Home = () => {
       socket.off("message", onMessage);
       socket.off("messages", getMessagesAtInit);
       socket.off("users", getUserAtInit);
-      socket.off("disconnect", onConnectionError);
-      socket.off("connect_error", onConnectionError);
     };
   }, []);
 
