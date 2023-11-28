@@ -61,7 +61,7 @@ const Message = ({
             fromSelf ? style.message__self : ""
           }`}
         >
-          {content}
+          {content.replace(/'/g, "&apos;")}
         </div>
         {isHovered && (
           <div className={style.imageContainer}>
