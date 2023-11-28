@@ -97,7 +97,7 @@ const Sidebar = () => {
               className={style.server_icon}
             />
             <div className={style.popper}>
-              <h4 className={style.popper_text}>Nuit de l'info champs</h4>
+              <h4 className={style.popper_text}>Nuit de linfo champs</h4>
             </div>
           </li>
           <li className={`${style.circle} ${style.blue_bubble}`}>
@@ -108,12 +108,12 @@ const Sidebar = () => {
               className={style.server_icon}
             />
             <div className={style.popper}>
-              <h4 className={style.popper_text}>YONNHA - SAE 401</h4>
+              <h4 className={style.popper_text}>YONNHA SAE 401</h4>
             </div>
           </li>
           <li className={`${style.circle} ${style.blue_bubble}`}>
             <div className={style.popper}>
-              <h4 className={style.popper_text}>La Salle 2000's</h4>
+              <h4 className={style.popper_text}>La Salle 2000s</h4>
             </div>
           </li>
           <li className={`${style.circle} ${style.blue_bubble}`}>

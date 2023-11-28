@@ -11,12 +11,12 @@ const User = ({ user, selectedUser, setSelectedUser, resetNotification }) => {
     console.log(userRef);
   });
 
-  useEffect(() => {
-    // Increment the notification count when user.hasNewMessages is true
-    if (user.hasNewMessages) {
-      setNotificationCount(notificationCount + 1);
-    }
-  }, [user.hasNewMessages]);
+  // useEffect(() => {
+  //   // Increment the notification count when user.hasNewMessages is true
+  //   if (user.hasNewMessages) {
+  //     setNotificationCount(notificationCount + 1);
+  //   }
+  // }, [user.hasNewMessages]);
 
   return (
     <div
@@ -27,7 +27,7 @@ const User = ({ user, selectedUser, setSelectedUser, resetNotification }) => {
       onClick={() => {
         setSelectedUser(user);
         resetNotification(user);
-        setNotificationCount(0);
+        // setNotificationCount(0);
       }}
     >
       <Image
