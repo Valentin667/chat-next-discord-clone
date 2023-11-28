@@ -2,6 +2,13 @@ import style from "./Sidebar.module.scss";
 import { useEffect, useState } from "react";
 // import { useRouter } from 'next/router'
 import RoomAvatar from "../roomavatar/RoomAvatar";
+import Image from "next/image";
+import butmmi from "../../../public/assets/images/main/sidebar/butmmi_icon.webp";
+import logo_server_mmi from "../../../public/assets/images/main/sidebar/logo_server_mmi.jpeg";
+import mmi_esport from "../../../public/assets/images/main/sidebar/mmi_esport.webp";
+import kds from "../../../public/assets/images/main/sidebar/kds.webp";
+import nuit_de_linfo_champs from "../../../public/assets/images/main/sidebar/nuit_de_linfo_champs.webp";
+import yonnah_sae_401 from "../../../public/assets/images/main/sidebar/yonnah_sae_401.webp";
 
 const Sidebar = () => {
   // const router = useRouter()
@@ -39,9 +46,9 @@ const Sidebar = () => {
           </li>
           <div className={style.divider}></div>
           <li className={`${style.circle} ${style.blue_bubble}`}>
-            <img
+            <Image
               draggable="false"
-              src="/assets/images/main/sidebar/butmmi_icon.webp"
+              src={butmmi}
               alt=""
               className={style.server_icon}
             />
@@ -50,9 +57,9 @@ const Sidebar = () => {
             </div>
           </li>
           <li className={`${style.circle} ${style.blue_bubble}`}>
-            <img
+            <Image
               draggable="false"
-              src="/assets/images/main/sidebar/logo_server_mmi.jpeg"
+              src={logo_server_mmi}
               alt=""
               className={style.server_icon}
             />
@@ -61,9 +68,9 @@ const Sidebar = () => {
             </div>
           </li>
           <li className={`${style.circle} ${style.blue_bubble}`}>
-            <img
+            <Image
               draggable="false"
-              src="/assets/images/main/sidebar/MMI-Esport.webp"
+              src={mmi_esport}
               alt=""
               className={style.server_icon}
             />
@@ -72,9 +79,9 @@ const Sidebar = () => {
             </div>
           </li>
           <li className={`${style.circle} ${style.blue_bubble}`}>
-            <img
+            <Image
               draggable="false"
-              src="/assets/images/main/sidebar/kds.webp"
+              src={kds}
               alt=""
               className={style.server_icon}
             />
@@ -83,9 +90,9 @@ const Sidebar = () => {
             </div>
           </li>
           <li className={`${style.circle} ${style.blue_bubble}`}>
-            <img
+            <Image
               draggable="false"
-              src="/assets/images/main/sidebar/nuit_de_linfo_champs.webp"
+              src={nuit_de_linfo_champs}
               alt=""
               className={style.server_icon}
             />
@@ -94,9 +101,9 @@ const Sidebar = () => {
             </div>
           </li>
           <li className={`${style.circle} ${style.blue_bubble}`}>
-            <img
+            <Image
               draggable="false"
-              src="/assets/images/main/sidebar/yonnah_sae_401.webp"
+              src={yonnah_sae_401}
               alt=""
               className={style.server_icon}
             />

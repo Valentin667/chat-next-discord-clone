@@ -94,7 +94,7 @@ const Home = () => {
 
     setError({
       title,
-      content,
+      content: content.replace(/'/g, "&apos;"),
     });
   };
 

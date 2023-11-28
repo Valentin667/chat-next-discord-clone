@@ -1,13 +1,13 @@
-import Image from 'next/image'
-import { useRouter } from 'next/router'
-import styles from './RoomAvatar.module.scss'
+import Image from "next/image";
+import { useRouter } from "next/router";
+import styles from "./RoomAvatar.module.scss";
 
 const RoomAvatar = ({ id, avatar, name }) => {
-  const router = useRouter()
+  const router = useRouter();
 
-//   const changeUrl = () => {
-//     router.push(`?channel=${id}&name=${name}`)
-//   }
+  //   const changeUrl = () => {
+  //     router.push(`?channel=${id}&name=${name}`)
+  //   }
 
   return (
     <div className={styles.wrapper} onClick={changeUrl}>
@@ -21,7 +21,7 @@ const RoomAvatar = ({ id, avatar, name }) => {
         />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default RoomAvatar
+export default RoomAvatar;
