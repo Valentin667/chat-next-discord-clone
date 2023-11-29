@@ -29,8 +29,9 @@ const ChatHeader = () => {
       </div>
       <div className={style.headerIconsContainer}>
         <div
-          className={`${style.headerItem} ${style.tipper_boi}`}
-          data-tip="Start a voice call"
+          className={style.headerItem}
+          // ${style.tipper_boi}`}
+          // data-tip="Start a voice call"
         >
           <Image
             draggable="false"

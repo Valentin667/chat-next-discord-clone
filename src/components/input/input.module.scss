@@ -20,10 +20,10 @@
 
 .chatInputWrapper {
   width: auto;
-  margin: 0 15px 20px 15px;
+  margin: 0 15px 5px 15px;
   height: 6%;
   background: #373a3f;
-  padding: 0 15px;
+  padding: 0 5px 0 5px;
   border-radius: 9px;
   display: flex;
   align-items: center;
@@ -99,9 +99,17 @@
 }
 
 .svgContainer {
-  margin-right: 15px;
+  margin-left: 7px;
+  margin-right: 7px;
   display: flex;
   align-items: center;
+}
+
+.selectedImage {
+  width: 100px; /* ou la largeur que vous préférez */
+  height: auto; /* pour maintenir le ratio d'aspect de l'image */
+  margin: 10px 0; /* ajustez la marge selon vos besoins */
+  border-radius: 5px; /* ou une autre valeur de bordure que vous préférez */
 }
 
 .svg {

@@ -90,8 +90,8 @@ const UserList = ({
           <div className={style.avatar_wrapper}>
             <Image
               draggable="false"
-              height={30}
-              width={30}
+              height={25}
+              width={25}
               src={avatar}
               className={style.img_avatar}
               alt=""

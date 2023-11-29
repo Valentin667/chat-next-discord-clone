@@ -39,6 +39,7 @@ import style from "./input.module.scss";
 
 const Input = ({ selectedUser, setSelectedUser }) => {
   const inputRef = useRef();
+  const fileInputRef = useRef(null);
 
   const onKeyDown = (e) => {
     // detect when user press enter
@@ -60,6 +61,15 @@ const Input = ({ selectedUser, setSelectedUser }) => {
           username: localStorage.getItem("username"),
           from: socket.userID,
         });
+
+        if (selectedImage) {
+          console.log("Image envoyée :", selectedImage);
+
+          socket.emit("sendImage", { image: selectedImage });
+
+          // Réinitialiser l'image sélectionnée
+          setSelectedImage(null);
+        }
 
         // change the reference to trigger a render
         setSelectedUser(_selectedUser);
@@ -121,27 +131,60 @@ const Input = ({ selectedUser, setSelectedUser }) => {
     setIsHovered(false);
   };
 
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const selectFile = (e) => {
+    const file = e.target.files[0];
+
+    // Si une image est sélectionnée, affichez-la
+    if (file) {
+      const reader = new FileReader();
+
+      reader.onload = (e) => {
+        setSelectedImage(e.target.result);
+      };
+
+      reader.readAsDataURL(file);
+    }
+  };
+
   return (
     // <div className={style.chatInputContainer}>
     <div className={style.chatInputWrapper}>
       <div className={style.svgContainer}>
-        <Image
-          draggable="false"
-          height={25}
-          width={25}
-          src={plusFilled}
-          className={style.svg}
-          alt=""
+        <input
+          type="file"
+          onChange={selectFile}
+          accept="image/*"
+          style={{ display: "none" }}
+          ref={fileInputRef}
         />
+        <label onClick={() => fileInputRef.current.click()}>
+          <Image
+            height={25}
+            width={25}
+            src={plusFilled}
+            className={style.svg}
+            alt=""
+          />
+        </label>
       </div>
       <input
         type="text"
         placeholder="Type a message"
-        ref={inputRef}
         className={style.input}
         onKeyDown={onKeyDown}
+        ref={inputRef}
       />
-
+      <div className={style.imageContainer}>
+        {selectedImage && (
+          <img
+            src={selectedImage}
+            alt="Selected"
+            className={style.selectedImage}
+          />
+        )}
+      </div>
       <div
         className={`${style.svgContainer} ${style.tipper_boi}`}
         data-tip="Take your friends to the next level! Give them great chat perks with Nitro."

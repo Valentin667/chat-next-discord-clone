@@ -196,6 +196,7 @@ const Home = () => {
         setSelectedUser={setSelectedUser}
         selectedUser={selectedUser}
         className={style.userlist}
+        selectedUsername={selectedUser?.username}
       />
       {error && (
         <Notification
