@@ -53,7 +53,7 @@ const Message = ({
         <div className={style.messageDetails}>
           <p className={style.sender}>{username}</p>
           <small className={style.timestamp}>{timestamp}</small>
-          <p className={style.date}>Today</p>
+          <p className={style.date}>Today at 10am</p>
         </div>
         <div
           ref={messageRef}
