@@ -50,6 +50,7 @@ const Input = ({ selectedUser, setSelectedUser }) => {
         socket.emit("private message", {
           content: inputRef.current.value,
           to: selectedUser.userID,
+          imageURL: selectedImage,
         });
 
         // do this because react doesnt re-render otherwise
@@ -62,14 +63,7 @@ const Input = ({ selectedUser, setSelectedUser }) => {
           from: socket.userID,
         });
 
-        if (selectedImage) {
-          console.log("Image envoyée :", selectedImage);
-
-          socket.emit("sendImage", { image: selectedImage });
-
-          // Réinitialiser l'image sélectionnée
-          setSelectedImage(null);
-        }
+        setSelectedImage(null);
 
         // change the reference to trigger a render
         setSelectedUser(_selectedUser);
@@ -136,11 +130,12 @@ const Input = ({ selectedUser, setSelectedUser }) => {
   const selectFile = (e) => {
     const file = e.target.files[0];
 
-    // Si une image est sélectionnée, affichez-la
+    // If an image is selected, display it
     if (file) {
       const reader = new FileReader();
 
       reader.onload = (e) => {
+        // Set the selected image URL in the component state
         setSelectedImage(e.target.result);
       };
 

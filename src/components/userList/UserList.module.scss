@@ -137,6 +137,8 @@
     display: flex;
     align-items: center;
     width: 55%;
+    height: 90%;
+    padding-left: 2px;
 
     &:hover {
       background-color: #3f4248;
@@ -146,6 +148,8 @@
 
   .username {
     cursor: pointer;
+    font-weight: 100;
+    margin-bottom: 5px;
 
     &::before {
       content: attr(data-tip);
@@ -163,12 +167,16 @@
     }
   }
 
-  .tag,
+  .tag {
+    transition: transform 320ms;
+    align-self: flex-end;
+  }
   .status_emoji {
     transition: transform 320ms;
 
     h1 {
       font-size: 1em;
+      margin-bottom: 5px;
     }
   }
 
@@ -178,8 +186,8 @@
   }
 
   .avatar_wrapper {
-    width: 30px;
-    height: 30px;
+    width: 75px;
+    height: 75px;
     border-radius: 50%;
     margin-right: 8px;
     // position: relative;
@@ -194,16 +202,16 @@
 
   .status_holder {
     padding: 2px;
-    background-color: #202123;
+    background-color: #50ab7c;
     position: absolute;
     border-radius: 50%;
-    bottom: -1px;
-    right: -1px;
+    bottom: 20px;
+    left: 25px;
   }
 
   .status_icon {
-    width: 8px;
-    height: 8px;
+    width: 40px;
+    height: 40px;
     background-color: #50ab7c;
     border-radius: 50%;
   }
@@ -214,6 +222,13 @@
     justify-content: space-evenly;
     width: 45%;
     margin: 5px;
+  }
+
+  .bg {
+    &:hover {
+      background-color: #3f4248;
+      border-radius: 5px;
+    }
   }
 
   .switcher {

@@ -20,6 +20,7 @@ const Message = ({
   content,
   fromSelf,
   message,
+  imageURL,
 }) => {
   const messageRef = useRef();
   const [isHovered, setIsHovered] = useState(false);
@@ -63,6 +64,7 @@ const Message = ({
         >
           {content}
         </div>
+        {imageURL && <img src={imageURL} alt="Selected" />}
         {isHovered && (
           <div className={style.imageContainer}>
             <Image
