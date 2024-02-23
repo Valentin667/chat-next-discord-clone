@@ -1,6 +1,6 @@
 import { io } from "socket.io-client";
 
-export const socket = io("https://mmidev.alwaysdata.net/", {
+export const socket = io("valentinjullien.alwaysdata.net", {
   autoConnect: false,
 });
 
